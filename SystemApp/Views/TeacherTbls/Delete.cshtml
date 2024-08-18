@@ -1,0 +1,41 @@
+﻿@model SystemApp.Models.TeacherTbl
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">SystemApp/</span>UserDelete</h4>
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Are you sure you want to delete this?</h5>
+
+            </div>
+            <div class="card-body">
+
+                <div class="mb-3">
+                    @Html.DisplayNameFor(model => model.Name)
+                    <input asp-for="Name" class="form-control" placeholder=@Html.DisplayFor(model => model.Name) disabled />
+                </div>
+                <div class="mb-3">
+                    @Html.DisplayNameFor(model => model.Address)
+                    <input asp-for="Address" class="form-control" placeholder=@Html.DisplayFor(model => model.Address) disabled />
+                </div>
+                <div class="mb-3">
+                    @Html.DisplayNameFor(model => model.Phone)
+                    <input asp-for="Phone" class="form-control" placeholder=@Html.DisplayFor(model => model.Phone) disabled />
+                </div>
+                <div class="mb-3">
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                    <input asp-for="CreateDate" class="form-control" placeholder=@Html.DisplayFor(model => model.CreateDate) disabled />
+                </div>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+</div>
